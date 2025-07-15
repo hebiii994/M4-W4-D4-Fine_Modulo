@@ -7,11 +7,18 @@ using UnityEngine;
 public class LifeController : MonoBehaviour
 {
     [SerializeField] private int maxShields = 3;
+    [SerializeField] private float _deathAnimationDuration = 2f;
+    [SerializeField] private Animator _animator;
     public int CurrentShields { get; private set; }
     private bool isAlive = true;
+    private Rigidbody _rb;
 
     public UnityEvent<int> OnShieldsChanged;
 
+    private void Awake()
+    {
+        _rb = GetComponent<Rigidbody>();
+    }
     void Start()
     {
         CurrentShields = 0;
@@ -53,9 +60,25 @@ public class LifeController : MonoBehaviour
     private void Die()
     {
         isAlive = false;
-        Debug.LogError("Sei morto!");
-        GetComponent<PlayerController>().enabled = false;
-        GetComponent<CameraController>().enabled = false;
-        //logica di game Over da implementare
+        if (_rb != null)
+        {
+            _rb.velocity = Vector3.zero;
+            _rb.useGravity = false;
+            GetComponent<Collider>().isTrigger = true;
+        }
+            GetComponent<PlayerController>().enabled = false;
+
+        StartCoroutine(DeathSequence());
+    }
+
+    private IEnumerator DeathSequence()
+    {
+        if (_animator != null)
+        {
+            _animator.SetTrigger("IsDead");
+        }
+        yield return new WaitForSeconds(_deathAnimationDuration);
+        GameManager.Instance.HandleGameOver();
+
     }
 }

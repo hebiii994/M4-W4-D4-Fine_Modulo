@@ -44,11 +44,24 @@ public class GroundChecker : MonoBehaviour
     {
         float sphereRadius = _playerCollider.radius * 0.9f;
         float checkDistance = (_playerCollider.height / 2) - sphereRadius + 0.1f;
-        if (Physics.SphereCast(transform.position, sphereRadius, Vector3.down, out RaycastHit hit, checkDistance, _groundLayer, QueryTriggerInteraction.Ignore))
+        if (Physics.SphereCast(transform.position, sphereRadius, Vector3.down, out RaycastHit hit, checkDistance, ~0, QueryTriggerInteraction.Ignore))
         {
-            
-            float slopeAngle = Vector3.Angle(Vector3.up, hit.normal);
-            _isPhysicallyGrounded = slopeAngle <= _maxSlopeAngle;
+            if (hit.collider.CompareTag("Crate"))
+            {
+                hit.collider.GetComponent<Crate>()?.DestroyCrate();
+                GetComponent<PlayerController>()?.BounceOnCrate();
+                _isPhysicallyGrounded = false;
+                return;
+            }
+            if (((1 << hit.collider.gameObject.layer) & _groundLayer) != 0)
+            {
+                float slopeAngle = Vector3.Angle(Vector3.up, hit.normal);
+                _isPhysicallyGrounded = slopeAngle <= _maxSlopeAngle;
+            }
+            else
+            {
+                _isPhysicallyGrounded = false;
+            } 
         }
         else
         {
