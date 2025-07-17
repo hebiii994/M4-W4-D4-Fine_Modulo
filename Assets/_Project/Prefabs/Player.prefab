@@ -2253,7 +2253,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 5
+  _airControllMultiplier: 0.75
   _jumpForce: 7.1
+  _fallMultiplier: 2.5
+  _lowJumpMultiplier: 2
   _moveRotationSpeed: 10
   _rb: {fileID: 0}
   _groundCheck: {fileID: 2823564648129553803}
@@ -2264,7 +2267,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   _animator: {fileID: 6801980230743962842}
-  _bounceForce: 6
+  _bounceForce: 10
 --- !u!114 &2823564648129553803
 MonoBehaviour:
   m_ObjectHideFlags: 0
