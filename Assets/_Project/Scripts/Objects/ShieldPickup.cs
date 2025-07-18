@@ -9,6 +9,7 @@ public class ShieldPickup : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             LifeController lifeController = other.GetComponent<LifeController>();
+            other.GetComponent<PlayerAudio>()?.PlayPickupSound();
             if (lifeController != null )
             {
                 lifeController.AddShield();

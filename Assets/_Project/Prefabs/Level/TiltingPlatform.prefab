@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7740144484411712057}
   - component: {fileID: 5023237073889129340}
   - component: {fileID: 2039298136126352771}
-  - component: {fileID: 6328160318787554781}
+  - component: {fileID: 5081656034802875430}
   m_Layer: 7
   m_Name: TiltingPlatform
   m_TagString: Untagged
@@ -2685,7 +2685,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 613
+  m_VersionIndex: 529
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -2785,8 +2785,8 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4480826769275099861}
   m_Mesh: {fileID: 0}
---- !u!64 &6328160318787554781
-MeshCollider:
+--- !u!65 &5081656034802875430
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2803,7 +2803,6 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
+  serializedVersion: 3
+  m_Size: {x: 1.5965624, y: 0.25, z: 1.4755754}
+  m_Center: {x: 0, y: 4.94, z: 0}

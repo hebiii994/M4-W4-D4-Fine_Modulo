@@ -10,6 +10,7 @@ public class KeyPickup : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            other.GetComponent<PlayerAudio>()?.PlayPickupSound();
             GameManager.Instance.CollectKey();
             gameObject.SetActive(false);
         }

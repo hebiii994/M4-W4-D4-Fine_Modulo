@@ -55,6 +55,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66e3be9ae1ce5f346b496336d91669ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _breakSound: {fileID: 8300000, guid: a431ebd31155c2c43bd118c793c92383, type: 3}
 --- !u!23 &1545332306759724595
 MeshRenderer:
   m_ObjectHideFlags: 0

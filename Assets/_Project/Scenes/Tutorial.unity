@@ -5652,7 +5652,7 @@ PrefabInstance:
     - target: {fileID: 4167841337801962176, guid: 83202149e61c79941b54fdbb49c08dee,
         type: 3}
       propertyPath: m_VersionIndex
-      value: 616
+      value: 622
       objectReference: {fileID: 0}
     - target: {fileID: 4480826769275099861, guid: 83202149e61c79941b54fdbb49c08dee,
         type: 3}
@@ -9372,7 +9372,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _target: {fileID: 5504799544070899509}
   _offset: {x: 0, y: 2, z: -5}
-  _mouseSensitivity: 3
+  _mouseSensitivity: 100
   _controllerSensitivity: 100
   _bottomClamp: -30
   _topClamp: 60
@@ -11465,13 +11465,25 @@ Mesh:
     offset: 0
     size: 0
     path: 
---- !u!43 &1976689636
+--- !u!1 &1992010059 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3506028276846064309, guid: 76b97c81032c03149bc56cd64ddbf5aa,
+    type: 3}
+  m_PrefabInstance: {fileID: 2484484454587577693}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &1992010063 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 3072705378324492182, guid: 76b97c81032c03149bc56cd64ddbf5aa,
+    type: 3}
+  m_PrefabInstance: {fileID: 2484484454587577693}
+  m_PrefabAsset: {fileID: 0}
+--- !u!43 &2003834787
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-373338(Clone)
+  m_Name: pb_Mesh-373338(Clone)(Clone)(Clone)
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -11630,18 +11642,6 @@ Mesh:
     offset: 0
     size: 0
     path: 
---- !u!1 &1992010059 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3506028276846064309, guid: 76b97c81032c03149bc56cd64ddbf5aa,
-    type: 3}
-  m_PrefabInstance: {fileID: 2484484454587577693}
-  m_PrefabAsset: {fileID: 0}
---- !u!224 &1992010063 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 3072705378324492182, guid: 76b97c81032c03149bc56cd64ddbf5aa,
-    type: 3}
-  m_PrefabInstance: {fileID: 2484484454587577693}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2098276100 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8772245337629799977, guid: bf95e56e990ad2c499e36009eb01da75,
@@ -12852,27 +12852,22 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 1976689636}
+      objectReference: {fileID: 2003834787}
     - target: {fileID: 4167841337801962176, guid: 83202149e61c79941b54fdbb49c08dee,
         type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 1976689636}
+      objectReference: {fileID: 2003834787}
     - target: {fileID: 4167841337801962176, guid: 83202149e61c79941b54fdbb49c08dee,
         type: 3}
       propertyPath: m_VersionIndex
-      value: 526
+      value: 532
       objectReference: {fileID: 0}
     - target: {fileID: 4480826769275099861, guid: 83202149e61c79941b54fdbb49c08dee,
         type: 3}
       propertyPath: m_Name
       value: TiltingPlatform
       objectReference: {fileID: 0}
-    - target: {fileID: 6328160318787554781, guid: 83202149e61c79941b54fdbb49c08dee,
-        type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 1976689636}
     - target: {fileID: 6515794264406850814, guid: 83202149e61c79941b54fdbb49c08dee,
         type: 3}
       propertyPath: m_LocalPosition.x

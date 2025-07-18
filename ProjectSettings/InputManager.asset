@@ -486,7 +486,7 @@ InputManager:
     axis: 5
     joyNum: 0
   - serializedVersion: 3
-    m_Name: RightStickHorizontal
+    m_Name: LookHorizontal
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: left
@@ -502,7 +502,7 @@ InputManager:
     axis: 2
     joyNum: 0
   - serializedVersion: 3
-    m_Name: RightStickVertical
+    m_Name: LookVertical
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: left

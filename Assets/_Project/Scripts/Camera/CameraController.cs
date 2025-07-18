@@ -34,10 +34,13 @@ public class CameraController : MonoBehaviour
         }
 
         if (_target == null) return;
-        _yaw += Input.GetAxis("Mouse X") * _mouseSensitivity;
-        _pitch -= Input.GetAxis("Mouse Y") * _mouseSensitivity;
-        _yaw += Input.GetAxis("RightStickHorizontal") * _controllerSensitivity * Time.deltaTime;
-        _pitch += Input.GetAxis("RightStickVertical") * _controllerSensitivity * Time.deltaTime;
+        _yaw += Input.GetAxis("Mouse X") * _mouseSensitivity * Time.deltaTime;
+        _pitch -= Input.GetAxis("Mouse Y") * _mouseSensitivity * Time.deltaTime;
+        _yaw += Input.GetAxis("LookHorizontal") * _controllerSensitivity * Time.deltaTime;
+        _pitch += Input.GetAxis("LookVertical") * _controllerSensitivity * Time.deltaTime;
+
+
+
         _pitch = Mathf.Clamp(_pitch, _bottomClamp, _topClamp);
         Quaternion rotation = Quaternion.Euler(_pitch, _yaw, 0);
         Vector3 desiredPosition = _target.position + rotation * _offset;

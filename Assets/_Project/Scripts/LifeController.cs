@@ -12,12 +12,14 @@ public class LifeController : MonoBehaviour
     public int CurrentShields { get; private set; }
     private bool isAlive = true;
     private Rigidbody _rb;
+    private PlayerAudio _playerAudio;
 
     public UnityEvent<int> OnShieldsChanged;
 
     private void Awake()
     {
         _rb = GetComponent<Rigidbody>();
+        _playerAudio = GetComponent<PlayerAudio>();
     }
     void Start()
     {
@@ -30,6 +32,7 @@ public class LifeController : MonoBehaviour
         if (!isAlive) return;
         if (CurrentShields > 0)
         {
+            _playerAudio?.PlayDamageSound();
             CurrentShields--;
             OnShieldsChanged?.Invoke(CurrentShields);
             Debug.Log($"Sei stato colpito, Scudi rimasti: {CurrentShields}");
@@ -67,7 +70,7 @@ public class LifeController : MonoBehaviour
             GetComponent<Collider>().isTrigger = true;
         }
             GetComponent<PlayerController>().enabled = false;
-
+        _playerAudio?.PlayDeathSound();
         StartCoroutine(DeathSequence());
     }
 

@@ -67,4 +67,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _tutorialCanvas: {fileID: 0}
-  _displayDuration: 3
+  _displayDuration: 4

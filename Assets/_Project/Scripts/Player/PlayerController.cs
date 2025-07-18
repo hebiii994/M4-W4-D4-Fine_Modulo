@@ -23,6 +23,8 @@ public class PlayerController : MonoBehaviour
     private Vector2 _inputVector;
     private bool _canAttack = true;
     private bool _isApplyingAnimationMovement = false;
+    private bool _wasGrounded;
+    private PlayerAudio _playerAudio;
 
 
     private Transform _mainCameraTransform;
@@ -32,7 +34,12 @@ public class PlayerController : MonoBehaviour
         _rb = GetComponent<Rigidbody>();
         _groundCheck = GetComponent<GroundChecker>();
         _mainCameraTransform = Camera.main.transform;
+        _playerAudio = GetComponent<PlayerAudio>();
 
+    }
+    private void Start()
+    {
+        _wasGrounded = _groundCheck.IsGrounded;
     }
 
     private void Update()
@@ -68,6 +75,7 @@ public class PlayerController : MonoBehaviour
     {
         HandleMovement();
         HandleRotation();
+        CheckLanding();
         if (_rb.velocity.y < 0)
         {
             _rb.velocity += Vector3.up * Physics.gravity.y * (_fallMultiplier - 1) * Time.fixedDeltaTime;
@@ -106,6 +114,7 @@ public class PlayerController : MonoBehaviour
 
     private void Jump()
     {
+        _playerAudio?.PlayJumpSound();
         _rb.velocity = new Vector3(_rb.velocity.x, 0, _rb.velocity.z);
         _rb.AddForce(Vector3.up * _jumpForce, ForceMode.VelocityChange);
     }
@@ -122,6 +131,7 @@ public class PlayerController : MonoBehaviour
     {
         _isApplyingAnimationMovement = true;
         _animator.SetTrigger("Spin");
+        _playerAudio?.PlaySpinSound();
         StartCoroutine(SpinCooldownCoroutine());
         Collider[] hits = Physics.OverlapSphere(transform.position, _attackRange, _crateLayer);
         foreach (Collider hit in hits)
@@ -169,5 +179,12 @@ public class PlayerController : MonoBehaviour
         _animator?.SetTrigger("Jump");
     }
 
-
+    private void CheckLanding()
+    {
+        if (!_wasGrounded && _groundCheck.IsGrounded)
+        {
+            _playerAudio?.PlayLandingSound();
+        }
+        _wasGrounded = _groundCheck.IsGrounded;
+    }
 }
