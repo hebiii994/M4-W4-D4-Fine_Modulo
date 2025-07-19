@@ -13073,6 +13073,16 @@ PrefabInstance:
       objectReference: {fileID: 1992010059}
     - target: {fileID: 256136055142234041, guid: b2982a511f301c948908b2c32068fc94,
         type: 3}
+      propertyPath: _levelTimeInSeconds
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 256136055142234041, guid: b2982a511f301c948908b2c32068fc94,
+        type: 3}
+      propertyPath: _totalCratesOnLevel
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 256136055142234041, guid: b2982a511f301c948908b2c32068fc94,
+        type: 3}
       propertyPath: _victoryFirstButton
       value: 
       objectReference: {fileID: 5333398800721369316}
@@ -13081,6 +13091,11 @@ PrefabInstance:
       propertyPath: _gameOverFirstButton
       value: 
       objectReference: {fileID: 2484484454587577694}
+    - target: {fileID: 256136055142234041, guid: b2982a511f301c948908b2c32068fc94,
+        type: 3}
+      propertyPath: _keysToCompleteLevel
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 256136055142234041, guid: b2982a511f301c948908b2c32068fc94,
         type: 3}
       propertyPath: OnKeysChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
